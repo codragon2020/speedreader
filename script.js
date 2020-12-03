@@ -5,3 +5,6 @@ var words = poem.split(" ");
 var mainEl = document.getElementById("main");
 var timerEl = document.getElementById("countdown");
 var bodyEl = document.createElement("div");
+
+// This prompt is used to take the input and set a countdown between words
+var msPerWord = prompt("How many milliseconds between words would you like?");
