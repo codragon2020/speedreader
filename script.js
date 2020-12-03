@@ -14,10 +14,10 @@ var msPerWord = prompt("How many milliseconds between words would you like?");
 
 // Added a countdown so the reader knows when the speed reader will occur
 function prepareReader() {
-    var timeLeft = 3;
+    var timeLeft = 4;
   
     var timeInterval = setInterval(function() {
-      timerEl.textContent = timeLeft + " seconds remaining";
+      timerEl.textContent = (timeLeft - 1) + " seconds remaining";
       timeLeft--;
   
       if (timeLeft === 0) {
