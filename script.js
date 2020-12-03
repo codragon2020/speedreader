@@ -8,3 +8,20 @@ var bodyEl = document.createElement("div");
 
 // This prompt is used to take the input and set a countdown between words
 var msPerWord = prompt("How many milliseconds between words would you like?");
+
+// Added a countdown so the reader knows when the speed reader will occur
+function prepareRead() {
+    var timeLeft = 3;
+  
+    var timeInterval = setInterval(function() {
+      timerEl.textContent = timeLeft + " seconds remaining";
+      timeLeft--;
+  
+      if (timeLeft === 0) {
+        timerEl.textContent = "";
+        speedRead();
+        clearInterval(timeInterval);
+      }
+  
+    }, 1000);
+  }
