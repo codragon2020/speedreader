@@ -25,3 +25,22 @@ function prepareRead() {
   
     }, 1000);
   }
+
+// Main function getting called after the countdown expires
+// This function will pass the words from the quote, one at a time, into the main element of the DOM
+// Each word will be passed in at the rate of the user's input into the prompt
+function speedRead() {
+    mainEl.append(bodyEl);
+  
+    var poemInterval = setInterval(function() {
+      if (words[i] === undefined) {
+        clearInterval(poemInterval);
+      } else {
+        mainEl.textContent = words[i];
+        i++;
+      }
+  
+    }, millisecondsPerWord);
+  }
+  
+  prepareRead();
